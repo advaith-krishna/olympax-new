@@ -1,0 +1,21 @@
+# Olympax Sports Academy Website
+
+> A sports academy in Nellimoodu, Thiruvananthapuram, Kerala offering coaching in
+> martial arts, archery, yoga, zumba, and fitness programs, plus a kids summer camp.
+> Includes a Supabase-backed product admin flow.
+
+## Main Pages
+- [index.html](index.html) — Homepage with local academy branding, program overview, gallery, FAQ, WhatsApp enquiry link, and registration call-to-action.
+- [admin.html](admin.html) — Admin dashboard for adding new product records and uploading product images to Supabase.
+
+## Technical Integration
+- [app.js](app.js) — Frontend interaction logic for navigation, section reveal animations, program filtering, FAQ accordion, and page scroll behavior.
+- [supabase.js](supabase.js) — Supabase client setup, product fetching, image URL handling, and fallback image support for product cards.
+- [admin.js](admin.js) — Admin product submission and Supabase insert flow for storing product metadata and images.
+
+## Documentation
+- [IMAGE_SETUP_GUIDE.md](IMAGE_SETUP_GUIDE.md) — Setup guide for Supabase Storage, product image URLs, database schema, and troubleshooting.
+
+## Assets
+- [style.css](style.css) — Website styling for desktop and mobile layouts.
+- `*.jpg` images — Visual content used on the site, including `archery.jpg`, `yoga.jpg`, `zumba.jpg`, `karate.jpg`, `kickboxing.jpg`, and `communicating.jpg`.
