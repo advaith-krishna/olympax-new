@@ -134,7 +134,7 @@ function getProductImageUrl(product) {
  * This is a simple placeholder image from a public CDN.
  * You can replace this URL with any image URL you prefer.
  */
-const FALLBACK_IMAGE_URL = 'https://via.placeholder.com/400x300?text=No+Image';
+const FALLBACK_IMAGE_URL = 'https://placehold.co/400x300?text=No+Image';
 
 /**
  * Render all product cards to the DOM.
@@ -237,17 +237,6 @@ function renderProducts(products) {
     card.appendChild(info);
     container.appendChild(card);
   });
-}
-
-async function loadProducts() {
-  const productsGrid = document.getElementById('products-grid');
-
-  if (!productsGrid) {
-    return;
-  }
-
-  const products = await fetchProducts();
-  renderProducts(products);
 }
 
 /**

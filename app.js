@@ -1,8 +1,10 @@
 // Navbar scroll
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+}
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
@@ -56,7 +58,7 @@ function filterCards(category, btn) {
 function selectWaCategory(btn) {
   document.querySelectorAll('.wa-cat-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('waSendBtn').href = btn.data-href;
+  document.getElementById('waSendBtn').href = btn.dataset.href;
 }
 
 // FAQ Accordion

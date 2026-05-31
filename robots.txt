@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin.js
+Disallow: /supabase.js
+Disallow: /IMAGE_SETUP_GUIDE.md
+Sitemap: https://olympaxacademy.co.in/sitemap.xml
