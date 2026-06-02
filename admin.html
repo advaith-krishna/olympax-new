@@ -8,46 +8,64 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">OLYMPAX</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Back to website</a></li>
-      <li><a href="#admin-form" class="nav-link">Add product</a></li>
-    </ul>
-  </nav>
+  <!-- LOGIN SCREEN -->
+  <section id="login-gate" style="max-width:420px;margin:120px auto;display:block;">
+    <h2>Admin Login</h2>
 
-  <main class="admin-page">
-    <section class="section admin-hero">
-      <div class="section-label">Admin Dashboard</div>
-      <h1 class="section-title">Add New Product</h1>
-      <p class="section-body">Use this form to upload an image and store product data in Supabase.</p>
-    </section>
+    <label>Email</label>
+    <input type="email" id="adminEmail" placeholder="admin@example.com">
 
-    <section class="admin-card" id="admin-form">
-      <form id="productForm" class="admin-form">
-        <label for="name">Product name</label>
-        <input type="text" id="name" name="name" placeholder="Example: Gold Chain" required>
+    <label>Password</label>
+    <input type="password" id="adminPassword" placeholder="••••••••">
 
-        <label for="category">Category</label>
-        <input type="text" id="category" name="category" placeholder="Example: Jewellery" required>
+    <button onclick="adminLogin()">Login</button>
 
-        <label for="price">Price</label>
-        <input type="number" id="price" name="price" placeholder="100.00" step="0.01" min="0" required>
+    <p id="loginStatus" style="color:red;"></p>
+  </section>
 
-        <label for="stock">Stock</label>
-        <input type="number" id="stock" name="stock" placeholder="10" min="0" required>
+  <section id="admin-panel" style="display:none;">
+    <nav id="navbar">
+      <a href="index.html" class="nav-logo">OLYMPAX</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Back to website</a></li>
+        <li><a href="#admin-form" class="nav-link">Add product</a></li>
+        <li><button type="button" onclick="adminLogout()">Logout</button></li>
+      </ul>
+    </nav>
 
-        <label for="description">Description</label>
-        <textarea id="description" name="description" rows="4" placeholder="Short product description" required></textarea>
+    <main class="admin-page">
+      <section class="section admin-hero">
+        <div class="section-label">Admin Dashboard</div>
+        <h1 class="section-title">Add New Product</h1>
+        <p class="section-body">Use this form to upload an image and store product data in Supabase.</p>
+      </section>
 
-        <label for="image">Product image</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+      <section class="admin-card" id="admin-form">
+        <form id="productForm" class="admin-form">
+          <label for="name">Product name</label>
+          <input type="text" id="name" name="name" placeholder="Example: Gold Chain" required>
 
-        <button type="submit" class="btn-primary">Save product</button>
-        <div id="formStatus" class="form-status">Fill the form and upload a product image.</div>
-      </form>
-    </section>
-  </main>
+          <label for="category">Category</label>
+          <input type="text" id="category" name="category" placeholder="Example: Jewellery" required>
+
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" placeholder="100.00" step="0.01" min="0" required>
+
+          <label for="stock">Stock</label>
+          <input type="number" id="stock" name="stock" placeholder="10" min="0" required>
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Short product description" required></textarea>
+
+          <label for="image">Product image</label>
+          <input type="file" id="image" name="image" accept="image/*" required>
+
+          <button type="submit" class="btn-primary">Save product</button>
+          <div id="formStatus" class="form-status">Fill the form and upload a product image.</div>
+        </form>
+      </section>
+    </main>
+  </section>
 
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <script src="supabase.js"></script>

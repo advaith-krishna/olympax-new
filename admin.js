@@ -1,3 +1,45 @@
+// Check login when page loads
+window.addEventListener("DOMContentLoaded", async () => {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+
+  if (session) {
+    showAdminPanel();
+  } else {
+    showLoginGate();
+  }
+});
+
+async function adminLogin() {
+  const email = document.getElementById("adminEmail").value;
+  const password = document.getElementById("adminPassword").value;
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    document.getElementById("loginStatus").innerText = error.message;
+  } else {
+    showAdminPanel();
+  }
+}
+
+async function adminLogout() {
+  await supabaseClient.auth.signOut();
+  showLoginGate();
+}
+
+function showAdminPanel() {
+  document.getElementById("login-gate").style.display = "none";
+  document.getElementById("admin-panel").style.display = "block";
+}
+
+function showLoginGate() {
+  document.getElementById("login-gate").style.display = "block";
+  document.getElementById("admin-panel").style.display = "none";
+}
+
 const productForm = document.getElementById('productForm');
 const formStatus = document.getElementById('formStatus');
 
