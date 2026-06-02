@@ -87,3 +87,144 @@ window.addEventListener('scroll', () => {
   const heroBg = document.querySelector('.hero-bg');
   if (heroBg) heroBg.style.transform = `translateY(${y * 0.3}px)`;
 });
+
+async function fetchProducts() {
+  try {
+    const { data, error } = await supabaseClient
+      .from('products')
+      .select('*');
+
+    if (error) {
+      console.error('Failed to fetch products:', error.message);
+      return [];
+    }
+
+    return data || [];
+  } catch (error) {
+    console.error('Unexpected error while fetching products:', error);
+    return [];
+  }
+}
+
+function formatProductPrice(value) {
+  if (value == null || value === '') {
+    return 'Price not available';
+  }
+
+  const number = Number(value);
+
+  if (Number.isNaN(number)) {
+    return value;
+  }
+
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0,
+  }).format(number);
+}
+
+function getProductImageUrl(product) {
+  const imageUrl = product.image_url || product.image || product.imageUrl || product.photo || '';
+
+  if (!imageUrl) {
+    return '';
+  }
+
+  if (imageUrl.startsWith('http')) {
+    return imageUrl;
+  }
+
+  try {
+    const { data } = supabaseClient.storage.from('products').getPublicUrl(imageUrl);
+    return data?.publicUrl || '';
+  } catch (error) {
+    console.warn('Error getting image URL for bucket file:', error);
+    return '';
+  }
+}
+
+const FALLBACK_IMAGE_URL = 'https://placehold.co/400x300?text=No+Image';
+
+function renderProducts(products) {
+  const container = document.getElementById('products-grid');
+
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = '';
+
+  if (!products || products.length === 0) {
+    const emptyMessage = document.createElement('div');
+    emptyMessage.textContent = 'No products are available at the moment. Please check back soon.';
+    emptyMessage.style.color = 'var(--muted)';
+    emptyMessage.style.textAlign = 'center';
+    emptyMessage.style.padding = '2rem 1rem';
+    emptyMessage.style.gridColumn = '1 / -1';
+    container.appendChild(emptyMessage);
+    return;
+  }
+
+  products.forEach((product) => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+
+    const imageWrapper = document.createElement('div');
+    imageWrapper.className = 'product-image';
+
+    const image = document.createElement('img');
+    const productImageUrl = getProductImageUrl(product);
+    const fallbackImageUrl = FALLBACK_IMAGE_URL;
+
+    image.src = productImageUrl || fallbackImageUrl;
+    image.alt = product.name ? `${product.name} product image` : 'Product image';
+    image.onerror = function() {
+      if (this.src !== fallbackImageUrl) {
+        this.src = fallbackImageUrl;
+      }
+    };
+
+    imageWrapper.appendChild(image);
+    card.appendChild(imageWrapper);
+
+    const info = document.createElement('div');
+    info.style.padding = '16px';
+    info.style.display = 'flex';
+    info.style.flexDirection = 'column';
+    info.style.gap = '8px';
+
+    const name = document.createElement('h4');
+    name.textContent = product.name || 'Unnamed product';
+    name.style.margin = '0';
+    name.style.fontSize = '1.05rem';
+    name.style.fontWeight = '700';
+    info.appendChild(name);
+
+    const category = document.createElement('div');
+    category.textContent = product.category ? product.category : 'Uncategorized';
+    category.style.color = 'var(--muted)';
+    category.style.fontSize = '0.85rem';
+    category.style.textTransform = 'uppercase';
+    category.style.letterSpacing = '0.08em';
+    category.style.fontWeight = '700';
+    info.appendChild(category);
+
+    const price = document.createElement('div');
+    price.textContent = formatProductPrice(product.price);
+    price.style.marginTop = 'auto';
+    price.style.fontWeight = '700';
+    price.style.color = 'var(--gold)';
+    info.appendChild(price);
+
+    card.appendChild(info);
+    container.appendChild(card);
+  });
+}
+
+async function loadProducts() {
+  const products = await fetchProducts();
+  renderProducts(products);
+}
+
+window.addEventListener('DOMContentLoaded', loadProducts);

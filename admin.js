@@ -1,28 +1,35 @@
-// Check login when page loads
-window.addEventListener("DOMContentLoaded", async () => {
-  const { data: { session } } = await supabaseClient.auth.getSession();
-
-  if (session) {
-    showAdminPanel();
-  } else {
-    showLoginGate();
-  }
-});
-
 async function adminLogin() {
-  const email = document.getElementById("adminEmail").value;
-  const password = document.getElementById("adminPassword").value;
+  const emailInput = document.getElementById('adminEmail');
+  const passwordInput = document.getElementById('adminPassword');
+  const loginStatus = document.getElementById('loginStatus');
+
+  const email = emailInput ? emailInput.value.trim() : '';
+  const password = passwordInput ? passwordInput.value : '';
+
+  if (loginStatus) {
+    loginStatus.textContent = '';
+  }
+
+  if (!email || !password) {
+    if (loginStatus) {
+      loginStatus.textContent = 'Please enter both email and password.';
+    }
+    return;
+  }
 
   const { error } = await supabaseClient.auth.signInWithPassword({
     email,
-    password
+    password,
   });
 
   if (error) {
-    document.getElementById("loginStatus").innerText = error.message;
-  } else {
-    showAdminPanel();
+    if (loginStatus) {
+      loginStatus.textContent = error.message;
+    }
+    return;
   }
+
+  showAdminPanel();
 }
 
 async function adminLogout() {
@@ -31,20 +38,43 @@ async function adminLogout() {
 }
 
 function showAdminPanel() {
-  document.getElementById("login-gate").style.display = "none";
-  document.getElementById("admin-panel").style.display = "block";
+  const loginGate = document.getElementById('login-gate');
+  const adminPanel = document.getElementById('admin-panel');
+  const loginStatus = document.getElementById('loginStatus');
+
+  if (loginGate) {
+    loginGate.style.display = 'none';
+  }
+
+  if (adminPanel) {
+    adminPanel.style.display = 'block';
+  }
+
+  if (loginStatus) {
+    loginStatus.textContent = '';
+  }
 }
 
 function showLoginGate() {
-  document.getElementById("login-gate").style.display = "block";
-  document.getElementById("admin-panel").style.display = "none";
+  const loginGate = document.getElementById('login-gate');
+  const adminPanel = document.getElementById('admin-panel');
+
+  if (loginGate) {
+    loginGate.style.display = 'block';
+  }
+
+  if (adminPanel) {
+    adminPanel.style.display = 'none';
+  }
 }
 
-const productForm = document.getElementById('productForm');
-const formStatus = document.getElementById('formStatus');
-
 function setStatus(message, isError = false) {
-  if (!formStatus) return;
+  const formStatus = document.getElementById('formStatus');
+
+  if (!formStatus) {
+    return;
+  }
+
   formStatus.textContent = message;
   formStatus.style.color = isError ? '#ff6b6b' : 'var(--text)';
   formStatus.style.background = isError ? 'rgba(255,107,107,0.12)' : 'rgba(61,214,208,0.08)';
@@ -52,22 +82,64 @@ function setStatus(message, isError = false) {
 }
 
 function getSafeFileName(file) {
-  const name = file.name.toLowerCase().replace(/[^a-z0-9\.]+/g, '-').replace(/-+/g, '-');
+  const name = file.name.toLowerCase().replace(/[^a-z0-9.]+/g, '-').replace(/-+/g, '-');
   return `${Date.now()}-${name}`;
 }
 
-async function saveProductRecord(productData) {
-  const { data, error } = await supabaseClient.from('products').insert([productData]);
+async function uploadProductImage(file, fileName) {
+  const bucketName = 'products';
+
+  if (!file || !fileName) {
+    throw new Error('Please provide both a file and a file name.');
+  }
+
+  if (!file.type.startsWith('image/')) {
+    throw new Error('Please select an image file.');
+  }
+
+  const { error } = await supabaseClient
+    .storage
+    .from(bucketName)
+    .upload(fileName, file, {
+      cacheControl: '3600',
+      upsert: false,
+    });
+
   if (error) {
     throw error;
   }
+
+  return fileName;
+}
+
+async function saveProductRecord(productData) {
+  const { data, error } = await supabaseClient
+    .from('products')
+    .insert([productData]);
+
+  if (error) {
+    throw error;
+  }
+
   return data;
 }
 
 async function handleProductFormSubmit(event) {
   event.preventDefault();
 
-  if (!productForm) return;
+  const productForm = document.getElementById('productForm');
+
+  if (!productForm) {
+    return;
+  }
+
+  const { data: { session } } = await supabaseClient.auth.getSession();
+
+  if (!session) {
+    showLoginGate();
+    setStatus('Please log in before saving products.', true);
+    return;
+  }
 
   const name = productForm.name.value.trim();
   const category = productForm.category.value.trim();
@@ -92,21 +164,18 @@ async function handleProductFormSubmit(event) {
     setStatus('Uploading image to Supabase Storage...');
     const uploadedFileName = await uploadProductImage(imageFile, fileName);
 
-    if (!uploadedFileName) {
-      throw new Error('Image upload failed.');
-    }
-
     setStatus('Saving product details...');
 
     await saveProductRecord({
-  name,
-  category,
-  price,
-  stock,
-  description,
-  image_url: uploadedFileName,
-  created_at: new Date().toISOString(),
-});
+      name,
+      category,
+      price,
+      stock,
+      description,
+      image_url: uploadedFileName,
+      created_at: new Date().toISOString(),
+    });
+
     setStatus('Product saved successfully!');
     productForm.reset();
   } catch (error) {
@@ -115,6 +184,25 @@ async function handleProductFormSubmit(event) {
   }
 }
 
-if (productForm) {
-  productForm.addEventListener('submit', handleProductFormSubmit);
+async function initializeAdminPage() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+
+  if (session) {
+    showAdminPanel();
+  } else {
+    showLoginGate();
+  }
+
+  const productForm = document.getElementById('productForm');
+
+  if (productForm) {
+    productForm.addEventListener('submit', handleProductFormSubmit);
+  }
 }
+
+window.adminLogin = adminLogin;
+window.adminLogout = adminLogout;
+window.showAdminPanel = showAdminPanel;
+window.showLoginGate = showLoginGate;
+
+window.addEventListener('DOMContentLoaded', initializeAdminPage);
