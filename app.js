@@ -145,6 +145,125 @@ function getProductImageUrl(product) {
 }
 
 const FALLBACK_IMAGE_URL = 'https://placehold.co/400x300?text=No+Image';
+const PRODUCT_WHATSAPP_NUMBER = '919745827081';
+
+let selectedProductName = '';
+
+function ensureProductOrderModal() {
+  let modal = document.getElementById('productOrderModal');
+
+  if (modal) {
+    return modal;
+  }
+
+  modal = document.createElement('div');
+  modal.id = 'productOrderModal';
+  modal.className = 'product-order-modal';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="product-order-backdrop" data-product-order-close></div>
+    <div class="product-order-dialog" role="dialog" aria-modal="true" aria-labelledby="productOrderTitle">
+      <button type="button" class="product-order-close" aria-label="Close order form" data-product-order-close>&times;</button>
+      <div class="product-order-kicker">Product Enquiry</div>
+      <h3 id="productOrderTitle">Order Product</h3>
+      <p id="productOrderName" class="product-order-name"></p>
+      <form id="productOrderForm" class="product-order-form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          <span>Address</span>
+          <textarea name="address" rows="3" autocomplete="street-address" required></textarea>
+        </label>
+        <label>
+          <span>Phone Number</span>
+          <input type="tel" name="phone" autocomplete="tel" required>
+        </label>
+        <label>
+          <span>Pincode</span>
+          <input type="text" name="pincode" inputmode="numeric" autocomplete="postal-code" required>
+        </label>
+        <label>
+          <span>Quantity</span>
+          <input type="number" name="quantity" min="1" step="1" value="1" required>
+        </label>
+        <button type="submit" class="product-order-submit">Submit on WhatsApp</button>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.querySelectorAll('[data-product-order-close]').forEach((button) => {
+    button.addEventListener('click', closeProductOrderModal);
+  });
+
+  modal.querySelector('#productOrderForm').addEventListener('submit', handleProductOrderSubmit);
+
+  return modal;
+}
+
+function openProductOrderModal(productName) {
+  selectedProductName = productName || 'Selected product';
+
+  const modal = ensureProductOrderModal();
+  const form = modal.querySelector('#productOrderForm');
+  const productNameElement = modal.querySelector('#productOrderName');
+
+  productNameElement.textContent = selectedProductName;
+  form.reset();
+  form.elements.quantity.value = '1';
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  form.elements.name.focus();
+}
+
+function closeProductOrderModal() {
+  const modal = document.getElementById('productOrderModal');
+
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+function handleProductOrderSubmit(event) {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+  const details = {
+    name: formData.get('name'),
+    address: formData.get('address'),
+    phone: formData.get('phone'),
+    pincode: formData.get('pincode'),
+    quantity: formData.get('quantity'),
+  };
+
+  const message = [
+    'Hi, I would like to order this product from Olympax Sports Academy.',
+    '',
+    `Product: ${selectedProductName}`,
+    `Name: ${details.name}`,
+    `Address: ${details.address}`,
+    `Phone Number: ${details.phone}`,
+    `Pincode: ${details.pincode}`,
+    `Quantity: ${details.quantity}`,
+  ].join('\n');
+
+  window.location.href = `https://wa.me/${PRODUCT_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeProductOrderModal();
+  }
+});
 
 function renderProducts(products) {
   const container = document.getElementById('products-grid');
@@ -169,6 +288,16 @@ function renderProducts(products) {
   products.forEach((product) => {
     const card = document.createElement('div');
     card.className = 'product-card';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `Order ${product.name || 'product'} on WhatsApp`);
+    card.addEventListener('click', () => openProductOrderModal(product.name || 'Unnamed product'));
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openProductOrderModal(product.name || 'Unnamed product');
+      }
+    });
 
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'product-image';
