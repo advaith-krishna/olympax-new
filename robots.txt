@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /admin_event.html
+Disallow: /admin_event.js
 Disallow: /admin.js
 Disallow: /supabase.js
 Disallow: /IMAGE_SETUP_GUIDE.md

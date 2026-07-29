@@ -182,6 +182,25 @@ section { padding: 100px 5vw; }
 .card-wa:hover { background: rgba(37,211,102,0.22); transform: translateY(-1px); }
 .card-wa svg { width: 14px; height: 14px; fill: #25d366; }
 
+/* ── EVENTS ── */
+#events { background: linear-gradient(135deg, rgba(240,201,58,0.08), rgba(61,214,208,0.05)); }
+.events-shell {
+  max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center;
+  padding: 36px; background: rgba(17,25,39,0.82); border: 1px solid rgba(240,201,58,0.18); border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+}
+.events-highlights { display: grid; gap: 12px; margin: 28px 0; }
+.events-highlight { padding: 14px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; }
+.events-highlight strong { display: block; color: var(--gold); margin-bottom: 4px; }
+.events-highlight span { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.events-card { background: linear-gradient(135deg, var(--dark3), rgba(240,201,58,0.08)); border: 1px solid rgba(61,214,208,0.2); border-radius: 12px; padding: 28px; }
+.events-card-badge { display: inline-block; margin-bottom: 14px; padding: 6px 12px; background: rgba(61,214,208,0.16); border: 1px solid rgba(61,214,208,0.3); border-radius: 999px; color: var(--cyan); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.events-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; color: white; }
+.events-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.events-card ul { list-style: none; display: grid; gap: 10px; padding: 0; margin: 0; }
+.events-card li { font-size: 0.9rem; color: var(--text); padding-left: 18px; position: relative; }
+.events-card li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+
 /* ── SUMMER CAMP ── */
 #summercamp { background: var(--dark2); position: relative; overflow: hidden; }
 .camp-bg-glow { position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(61,214,208,0.06) 0%, transparent 70%); pointer-events: none; }

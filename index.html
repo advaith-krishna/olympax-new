@@ -164,9 +164,10 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" aria-label="About Olympax Sports Academy">About</a></li>
-    <li><a href="#programs" aria-label="Sports and fitness programs at Olympax">Programs</a></li>
+    <li><a href="programs.html" aria-label="Sports and fitness programs at Olympax">Programs</a></li>
+    <li><a href="event.html" aria-label="View events at Olympax Sports Academy">Events</a></li>
     <li><a href="#summercamp" aria-label="Kids summer camp at Olympax Sports Academy">Summer Camp</a></li>
-    <li><a href="#products" aria-label="Sports products at Olympax Sports Academy">Products</a></li>
+    <li><a href="products.html" aria-label="Sports products at Olympax Sports Academy">Products</a></li>
     <li><a href="#gallery" aria-label="Olympax Sports Academy gallery">Gallery</a></li>
     <li><a href="#faq" aria-label="Frequently asked questions about Olympax Sports Academy">FAQ</a></li>
     <li><a href="#contact" class="nav-cta" aria-label="Register or enquire at Olympax Sports Academy">Register Now</a></li>
@@ -197,7 +198,7 @@
       <p class="hero-desc">Certified coaching in sports, martial arts, fitness and kids summer camp programs at Olympax Sports Academy in Nellimoodu, Kerala.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary" aria-label="Enroll at Olympax Sports Academy">Enroll Now</a>
-        <a href="#programs" class="btn-outline" aria-label="View sports, martial arts and fitness programs">View Programs</a>
+        <a href="programs.html" class="btn-outline" aria-label="View sports, martial arts and fitness programs">View Programs</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Disciplines</div></div>
@@ -265,248 +266,40 @@
   </div>
 </section>
 
-<!-- PROGRAMS -->
-<section id="programs">
-  <div class="programs-header reveal">
-    <div class="section-label">What We Train</div>
-    <!-- SEO CHANGE: Improved program heading and summary with service keywords. -->
-    <h2 class="section-title">Sports &amp; Fitness <span>Programs</span></h2>
-    <p class="section-body">Choose from badminton, cricket, archery, boxing, kickboxing, Muay Thai, karate, Kalari, Wushu, Kung Fu, Zumba, weight loss, general fitness and yoga coaching.</p>
-  </div>
-  <div class="programs-tabs reveal">
-    <button class="tab-btn active" data-category="all">All Programs</button>
-    <button class="tab-btn" data-category="sports">Sports</button>
-    <button class="tab-btn" data-category="martial">Martial Arts</button>
-    <button class="tab-btn" data-category="fitness">Fitness &amp; Wellness</button>
-  </div>
-  <div class="programs-grid" id="programsGrid">
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20enrolling%20for%20%2ABadminton%20coaching%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="sports">
-      <div class="program-card-image">
-        <img src="badminton .jpg" alt="Badminton coaching at Olympax Sports Academy" loading="lazy">
+<!-- EVENTS -->
+<section id="events" class="events-section" style="cursor:pointer;" onclick="window.location.href='event.html';" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.location.href='event.html'; }" role="link" tabindex="0" aria-label="View upcoming events at Olympax Sports Academy">
+  <div class="events-shell">
+    <div class="events-content reveal">
+      <div class="section-label">Upcoming Events</div>
+      <h2 class="section-title">Discover <span>Special Events</span></h2>
+      <p class="section-body">Explore our latest camps, showcases, and community events designed to bring athletes, families, and fitness enthusiasts together.</p>
+      <div class="events-highlights">
+        <div class="events-highlight">
+          <strong>Live Updates</strong>
+          <span>Get the latest event announcements and schedules.</span>
+        </div>
+        <div class="events-highlight">
+          <strong>Easy Access</strong>
+          <span>Open the events page anytime to see what is coming up.</span>
+        </div>
       </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 0v10M2 12h10"/></svg>
-      </div>
-      <div class="card-tag">Sports</div>
-      <h3>Badminton</h3>
-      <p>Master footwork, strokes, and match strategy with structured court sessions for all levels.</p>
-      <span class="card-agegroup">All Ages</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2ACricket%20coaching%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="sports">
-      <div class="program-card-image">
-        <img src="cricket .jpg" alt="Cricket coaching at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M14.828 9.172l-5.656 5.656M9.172 14.828L4.343 19.657a1 1 0 001.414 1.414l4.829-4.829M14.828 9.172L19.657 4.343a1 1 0 00-1.414-1.414l-4.829 4.829M14.828 9.172l-1.414-1.415"/></svg>
-      </div>
-      <div class="card-tag">Sports</div>
-      <h3>Cricket</h3>
-      <p>Batting, bowling, and fielding fundamentals through certified coaching and match practice.</p>
-      <span class="card-agegroup">All Ages</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AArchery%20training%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20age%20requirements%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="sports">
-      <div class="program-card-image">
-        <img src="archery.jpg" alt="Archery training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 22V2M2 12h20M12 7l-3 3M12 17l3-3"/></svg>
-      </div>
-      <div class="card-tag">Sports</div>
-      <h3>Archery</h3>
-      <p>Precision training, mental focus, and technique refinement for beginner to competitive archers.</p>
-      <span class="card-agegroup">Age 8+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2ABoxing%20coaching%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="boxing .jpg" alt="Boxing coaching at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 12h-5m0 0H7m5 0V7m0 5v5m4-8a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Boxing</h3>
-      <p>Build reflexes, power, and ring craft with professional boxing drills and sparring sessions.</p>
-      <span class="card-agegroup">Age 10+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AKickboxing%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="kickboxing.jpg" alt="Kickboxing training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Kickboxing</h3>
-      <p>Dynamic stand-up combat combining punching and kicking for fitness and self-defence.</p>
-      <span class="card-agegroup">Age 12+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AMuay%20Thai%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="muay thai .jpg" alt="Muay Thai training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Muay Thai</h3>
-      <p>The "Art of Eight Limbs" combines fists, elbows, knees and kicks trained in authentic Thai tradition.</p>
-      <span class="card-agegroup">Age 14+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AKarate%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20age%20groups%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="karate.jpg" alt="Karate training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Karate</h3>
-      <p>Traditional kata, kumite, and discipline for character building alongside physical conditioning.</p>
-      <span class="card-agegroup">Age 6+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AKalari%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20age%20groups%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="kalari.jpg" alt="Kalari training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 4v5c0 4.5-2.9 7.4-7 9-4.1-1.6-7-4.5-7-9V7l7-4zM9 12l2 2 4-5"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Kalari</h3>
-      <p>Traditional Kalaripayattu movement, flexibility, discipline, and self-defence training.</p>
-      <span class="card-agegroup">Age 8+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AWushu%20%26%20Kung%20Fu%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%2C%20fees%2C%20and%20batch%20availability%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="martial">
-      <div class="program-card-image">
-        <img src="wushu and kungfu .jpg" alt="Wushu and Kung Fu training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--gold);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-      </div>
-      <div class="card-tag">Martial Arts</div>
-      <h3>Wushu &amp; Kung Fu</h3>
-      <p>Chinese martial arts blending acrobatic movements, forms, and weapon techniques.</p>
-      <span class="card-agegroup">Age 8+</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AZumba%20classes%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%20and%20fees%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="fitness">
-      <div class="program-card-image">
-        <img src="zumba.jpg" alt="Zumba fitness class at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--cyan);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
-      </div>
-      <div class="card-tag">Fitness</div>
-      <h3>Zumba</h3>
-      <p>High-energy dance-fitness sessions that make cardio feel like a party, not a workout.</p>
-      <span class="card-agegroup">All Ages</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20the%20%2AWeight%20Loss%20Program%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20the%20program%2C%20timings%2C%20and%20fees%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="fitness">
-      <div class="program-card-image">
-        <img src="Weight loss program .jpg" alt="Weight loss program at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--cyan);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-      </div>
-      <div class="card-tag">Fitness</div>
-      <h3>Weight Loss Program</h3>
-      <p>Structured, sustainable fitness plans combining cardio, strength, and nutritional guidance.</p>
-      <span class="card-agegroup">Adults</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20the%20%2AGeneral%20Fitness%20program%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%20and%20fees%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="fitness">
-      <div class="program-card-image">
-        <img src="General fitness.jpg" alt="General fitness training at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--cyan);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      </div>
-      <div class="card-tag">Fitness</div>
-      <h3>General Fitness</h3>
-      <p>Sports-specific conditioning and all-round fitness for better performance in any discipline.</p>
-      <span class="card-agegroup">All Ages</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
-    <a href="https://wa.me/919447793301?text=Hi%21%20I%20am%20interested%20in%20%2AYoga%20classes%2A%20at%20Olympax%20Sports%20Academy.%20Could%20you%20share%20details%20about%20timings%20and%20fees%3F" target="_blank" rel="noopener" class="program-card with-image" data-category="fitness">
-      <div class="program-card-image">
-        <img src="yoga.jpg" alt="Yoga practice at Olympax Sports Academy" loading="lazy">
-      </div>
-      <div class="card-icon" style="color:var(--cyan);">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v18m0-18C8 3 5 6 5 10s3 7 7 7 7-3 7-7-3-7-7-7z"/></svg>
-      </div>
-      <div class="card-tag">Wellness</div>
-      <h3>Yoga</h3>
-      <p>Flexibility, breath control, and mindfulness practices for athletic recovery and mental clarity.</p>
-      <span class="card-agegroup">All Ages</span>
-      <div class="card-wa">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Enquire on WhatsApp
-      </div>
-    </a>
-
+      <a href="event.html" class="btn-primary" onclick="event.stopPropagation();">View Events</a>
+    </div>
+    <div class="events-card reveal-right">
+      <div class="events-card-badge">Featured</div>
+      <h3>Olympax Events Hub</h3>
+      <p>From camps to workshops, this is your place to follow everything happening at Olympax Sports Academy.</p>
+      <ul>
+        <li>New programs and seasonal events</li>
+        <li>Match days and training showcases</li>
+        <li>Community activities and registrations</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- SUMMER CAMP -->
-<section id="summercamp">
+<section id="summercamp" style="cursor:pointer;" onclick="window.location.href='event.html';" onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); window.location.href='event.html'; }" role="link" tabindex="0">
   <div class="camp-bg-glow"></div>
   <div class="camp-grid">
     <div class="reveal-left">
@@ -584,11 +377,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- SEO CHANGE: Added ARIA label to products section so empty dynamic content is understandable before JavaScript loads. -->
-<section id="products" aria-label="Sports academy products">
-  <div id="products-grid" class="products-grid"></div>
 </section>
 
 <!-- GALLERY -->
@@ -824,7 +612,7 @@
     </a>
     <ul class="footer-links">
       <li><a href="#about" aria-label="About Olympax Sports Academy">About</a></li>
-      <li><a href="#programs" aria-label="Sports and fitness programs at Olympax">Programs</a></li>
+      <li><a href="programs.html" aria-label="Sports and fitness programs at Olympax">Programs</a></li>
       <li><a href="#summercamp" aria-label="Kids summer camp at Olympax Sports Academy">Summer Camp</a></li>
       <li><a href="#gallery" aria-label="Olympax Sports Academy gallery">Gallery</a></li>
       <li><a href="#faq" aria-label="Frequently asked questions about Olympax Sports Academy">FAQ</a></li>
@@ -840,3 +628,4 @@
 <script src="app.js"></script>
 </body>
 </html>
+
